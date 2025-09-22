@@ -72,14 +72,12 @@ async function main() {
     if (userArgs.length === 0) {
       const lastCommand = await getLastCommandFromShellHistory();
 
-      // --- START OF PROPOSED FIX ---
       // Prevent the script from analyzing its own invocation
       if (lastCommand && (lastCommand.includes('./src/main.js') || lastCommand.includes('log-helper'))) {
         console.log('The log-helper script cannot analyze its own invocation.');
         console.log('Please run log-helper with a command to analyze, or run another command first.');
         return; // Exit gracefully
       }
-      // --- END OF PROPOSED FIX ---
 
       if (!lastCommand) {
         console.log('Could not determine the last command from history.');

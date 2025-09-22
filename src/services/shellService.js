@@ -302,7 +302,6 @@ async function walkProcessTree(pid, debug = false, depth = 0, maxDepth = 10) {
 
     // Check if any of the processes in the tree are known shells
     for (const proc of processes) {
-      // FIX: Add a check for proc.COMMAND before calling toLowerCase()
       if (!proc.COMMAND) {
         if (debug) {
           console.log(`Skipping process with PID ${proc.PID} due to undefined COMMAND`);
@@ -340,8 +339,6 @@ async function walkProcessTree(pid, debug = false, depth = 0, maxDepth = 10) {
 
 // Try to get the most recent command from the current shell session
 function getCurrentShellCommand(debug = false) {
-  // Skip the real-time history methods for now since they don't work reliably with execSync
-  // The fallback to history file is actually working well and is more reliable
   if (debug) {
     console.log('Skipping real-time history methods, using fallback to history file for reliability');
   }
