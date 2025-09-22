@@ -1,4 +1,4 @@
-# Log Helper: Complete Setup Guide
+# Shelly: Complete Setup Guide
 
 This guide provides a comprehensive walkthrough for setting up, configuring, and using the Log Helper project across different platforms and shell environments.
 
@@ -203,7 +203,6 @@ SHELL_OVERRIDE=bash log-helper
 ## 8. Features
 
 ### Error Analysis
-- **Pattern Matching**: Built-in rules for common command errors
 - **AI Analysis**: Intelligent error interpretation and suggestions
 - **Command Correction**: Suggests likely intended commands for typos
 - **History Context**: Uses command history for better analysis
@@ -213,30 +212,10 @@ SHELL_OVERRIDE=bash log-helper
 - **History Access**: Retrieves commands from shell history or live session
 - **Process Tree Analysis**: Intelligently detects your current shell
 
-### Customization
-- **Rule System**: Extensible rule-based error detection
-- **Environment Variables**: Configurable behavior through env vars
-- **Debug Logging**: Detailed troubleshooting information
-
 ## 9. Troubleshooting
 
 ### Common Issues
 
-#### "Could not determine the last command from history"
-**Solutions:**
-```bash
-# For Bash - ensure history is enabled
-echo 'HISTSIZE=1000' >> ~/.bashrc
-echo 'SAVEHIST=1000' >> ~/.bashrc
-
-# For Zsh - check history settings
-echo 'HISTSIZE=1000' >> ~/.zshrc
-echo 'SAVEHIST=1000' >> ~/.zshrc
-
-# For Tcsh - ensure history is enabled
-echo 'set history = 1000' >> ~/.tcshrc
-echo 'set savehist = 1000' >> ~/.tcshrc
-```
 
 #### "log-helper: command not found"
 **Cause:** The alias wasn't set up correctly or shell config wasn't reloaded.
@@ -257,12 +236,6 @@ Enable debug mode to see detailed information:
 ```bash
 LOG_HELPER_DEBUG=true log-helper
 ```
-
-### Environment Variables
-
-- `LOG_HELPER_DEBUG`: Enable debug logging (true/false)
-- `SHELL_OVERRIDE`: Force specific shell detection (bash, zsh, fish, tcsh, etc.)
-- `HISTFILE`: Custom history file path (respected by the tool)
 
 ## 10. Quick Reference
 
