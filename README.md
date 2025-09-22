@@ -1,4 +1,4 @@
-# Log Helper Agent
+# Shelly
 
 A powerful CLI tool that analyzes your failed commands and provides intelligent suggestions to fix them using AI-powered analysis.
 
@@ -7,9 +7,8 @@ A powerful CLI tool that analyzes your failed commands and provides intelligent 
 - 🔍 **Smart Error Analysis**: Uses AI to analyze command failures and suggest fixes
 - 🐚 **Multi-Shell Support**: Works with bash, zsh, fish, tcsh, and PowerShell
 - 🚀 **Real-time History Access**: Reliably gets the last command from your shell
-- 📚 **Rule-based Suggestions**: Built-in rules for common command errors
 - 🎯 **Command Suggestions**: Suggests similar commands when you mistype
-- 🌐 **Cross-Platform**: Supports macOS, Linux, and Windows
+- 🌐 **Cross-Platform**
 
 ## Quick Start
 
@@ -21,23 +20,8 @@ A powerful CLI tool that analyzes your failed commands and provides intelligent 
 
 ### Installation
 
-#### Option 1: Global Installation (Recommended)
 
-```bash
-npm install -g log-helper-agent
-```
-
-Then set up shell integration:
-
-```bash
-# For Bash/Zsh
-eval "$(log-helper --alias)"
-
-# Add to your shell config for permanent setup
-echo 'eval "$(log-helper --alias)"' >> ~/.bashrc  # or ~/.zshrc
-```
-
-#### Option 2: Local Development Setup
+####  Local Development Setup
 
 ```bash
 # Clone and navigate to project directory
@@ -156,19 +140,14 @@ SHELL_OVERRIDE=bash log-helper
 
 ## Supported Platforms and Shells
 
-### Fully Supported Shells
+###Supported Shells
 - ✅ **Bash** - Full support with real-time history access
 - ✅ **Zsh** - Full support with real-time history access (default on macOS Catalina+)
 - ✅ **Tcsh/Csh** - Full support with direct alias integration
 
-### Partially Supported (Fallback Mode)
-- ⚠️ **Fish** - Uses history file fallback method
-- ⚠️ **PowerShell** (Windows) - Basic support with history file reading
-
 ### Platform Support
 - **macOS**: Fully supported (Zsh/Bash/Tcsh)
 - **Linux**: Fully supported (Bash/Zsh/Tcsh)
-- **Windows**: Partial support (PowerShell, WSL recommended)
 
 ## How It Works
 
@@ -185,12 +164,10 @@ SHELL_OVERRIDE=bash log-helper
 1. **Shell Integration**: Captures your last command directly from shell memory or history
 2. **Command Analysis**: Analyzes the failed command and its error output
 3. **AI-Powered Suggestions**: Uses advanced analysis to suggest corrections and alternatives
-4. **Rule-Based Fixes**: Applies built-in rules for common mistakes
 
 ## Features in Detail
 
 ### Error Analysis
-- **Pattern Matching**: Built-in rules for common command errors
 - **AI Analysis**: Intelligent error interpretation and suggestions using NeuroLink
 - **Command Correction**: Suggests likely intended commands for typos
 - **History Context**: Uses command history for better analysis
@@ -199,11 +176,6 @@ SHELL_OVERRIDE=bash log-helper
 - **Multi-shell Support**: Native support for bash, zsh, and tcsh
 - **History Access**: Retrieves commands from shell history or live session
 - **Process Tree Analysis**: Intelligently detects your current shell
-
-### Customization
-- **Rule System**: Extensible rule-based error detection
-- **Environment Variables**: Configurable behavior through env vars
-- **Debug Logging**: Detailed troubleshooting information
 
 ## Troubleshooting
 
@@ -255,12 +227,6 @@ Enable debug mode to see detailed information about what the tool is doing:
 LOG_HELPER_DEBUG=true log-helper
 ```
 
-### Environment Variables
-
-- `LOG_HELPER_DEBUG`: Enable debug logging (true/false)
-- `SHELL_OVERRIDE`: Force specific shell detection (bash, zsh, fish, tcsh, etc.)
-- `HISTFILE`: Custom history file path (respected by the tool)
-
 ## Quick Reference
 
 ### One-Time Setup Commands
@@ -296,14 +262,9 @@ Contributions are welcome! Please feel free to submit issues and enhancement req
 
 ## Uninstallation
 
-### Global Installation
-```bash
-npm uninstall -g log-helper-agent
-```
-
 ### Remove Shell Integration
 Remove the `eval "$(log-helper --alias)"` line from your shell configuration file and reload your shell.
 
 ## License
 
-ISC License - see LICENSE file for details.
+ISC License 
